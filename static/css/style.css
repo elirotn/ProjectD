@@ -1,0 +1,1008 @@
+/* Color Variables */
+:root {
+    --primary-blue: #2196F3;
+    --secondary-green: #4CAF50;
+    --background-grey: #FAFAFA;
+    --text-dark: #212121;
+    --accent-orange: #FF5722;
+    --loading-amber: #FFC107;
+    --white: #FFFFFF;
+    --light-grey: #F5F5F5;
+    --border-grey: #E0E0E0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-grey);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header Section */
+.header-section {
+    margin-bottom: 3rem;
+}
+
+.logo-container {
+    margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+    font-size: 3.5rem;
+    color: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Download Card */
+.download-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 1px solid var(--border-grey);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-blue), #1976D2);
+    color: var(--white);
+    padding: 1.5rem;
+    border-bottom: none;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Input Styles */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group-text {
+    background-color: var(--light-grey);
+    border: 2px solid var(--border-grey);
+    border-right: none;
+    color: var(--text-dark);
+    padding: 0.75rem 1rem;
+}
+
+.url-input {
+    border: 2px solid var(--border-grey);
+    border-left: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.url-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+    outline: none;
+}
+
+.url-input:focus + .input-group-text,
+.input-group:focus-within .input-group-text {
+    border-color: var(--primary-blue);
+}
+
+/* Button Styles */
+.btn-download {
+    background: linear-gradient(135deg, var(--secondary-green), #388E3C);
+    border: none;
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-download:hover {
+    background: linear-gradient(135deg, #388E3C, var(--secondary-green));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.btn-download:active {
+    transform: translateY(0);
+}
+
+.btn-download:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-download.loading {
+    background: var(--loading-amber);
+    pointer-events: none;
+}
+
+/* Progress Section */
+.progress-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--light-grey);
+    border-radius: 12px;
+    border: 1px solid var(--border-grey);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-text {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.progress-percent {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.progress {
+    height: 12px;
+    background-color: #E0E0E0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-green));
+    transition: width 0.3s ease;
+    height: 100%;
+}
+
+.progress-details {
+    text-align: center;
+}
+
+/* Error and Success Sections */
+.error-section,
+.success-section {
+    margin-top: 1.5rem;
+}
+
+.alert {
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background-color: rgba(255, 87, 34, 0.1);
+    color: var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+}
+
+.alert-success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--secondary-green);
+    border-left: 4px solid var(--secondary-green);
+}
+
+/* Features Section */
+.features-section {
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px var(--shadow);
+    border: 1px solid var(--border-grey);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px var(--shadow);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.feature-card h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Instructions Section */
+.instructions-section {
+    margin-top: 3rem;
+}
+
+.instructions-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px var(--shadow);
+    border: 1px solid var(--border-grey);
+}
+
+.instructions-title {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.instructions-list {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.instructions-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.instructions-note {
+    background: rgba(33, 150, 243, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+    color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .instructions-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0;
+    }
+    
+    .main-title {
+        font-size: 1.75rem;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-download {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #ffffff40;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Mode Toggle */
+.mode-toggle .btn-check:checked + .btn {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.mode-toggle .btn-outline-primary {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.mode-toggle .btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Batch Download Styles */
+.batch-url-input {
+    border: 2px solid var(--border-grey);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.batch-url-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+    outline: none;
+}
+
+.batch-progress-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--light-grey);
+    border-radius: 12px;
+    border: 1px solid var(--border-grey);
+}
+
+.batch-info {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+}
+
+.batch-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.batch-summary {
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+.batch-items {
+    max-height: 400px;
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+}
+
+.batch-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-grey);
+    transition: background-color 0.3s ease;
+}
+
+.batch-item:last-child {
+    border-bottom: none;
+}
+
+.batch-item:hover {
+    background-color: var(--background-grey);
+}
+
+.batch-item-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.batch-item-url {
+    font-size: 0.9rem;
+    color: #666;
+    word-break: break-all;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.batch-item-status {
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: var(--loading-amber);
+}
+
+.status-downloading {
+    background-color: rgba(33, 150, 243, 0.2);
+    color: var(--primary-blue);
+}
+
+.status-completed {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--secondary-green);
+}
+
+.status-failed {
+    background-color: rgba(255, 87, 34, 0.2);
+    color: var(--accent-orange);
+}
+
+.batch-item-progress {
+    margin-top: 0.5rem;
+}
+
+.batch-item-progress .progress {
+    height: 6px;
+}
+
+.batch-item-message {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.batch-complete-section {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+}
+
+/* Animations for batch items */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.batch-item {
+    animation: slideInDown 0.3s ease;
+}
+
+/* Pulsing effect for active downloads */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-downloading {
+    animation: pulse 2s infinite;
+}
+
+/* Input Mode Selection */
+.btn-group .btn-outline-secondary.btn-sm {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.btn-group .btn-check:checked + .btn-outline-secondary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Extraction Results */
+.extraction-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--light-grey);
+    border-radius: 12px;
+    border: 1px solid var(--border-grey);
+}
+
+.results-header h5 {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.webpage-info {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+}
+
+.webpage-title {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.found-count {
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.video-links-container {
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.video-link-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-grey);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.video-link-item:last-child {
+    border-bottom: none;
+}
+
+.video-link-item:hover {
+    background-color: var(--background-grey);
+}
+
+.video-link-item.selected {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-left: 4px solid var(--primary-blue);
+}
+
+.video-link-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.video-link-url {
+    font-size: 0.9rem;
+    color: #666;
+    word-break: break-all;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.video-link-status {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--secondary-green);
+    font-weight: 500;
+}
+
+.video-link-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-link-action {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.extraction-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.no-videos-found {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.no-videos-found i {
+    font-size: 3rem;
+    color: var(--accent-orange);
+    margin-bottom: 1rem;
+}
+
+/* Mode descriptions */
+.form-text {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Animations for extraction results */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.extraction-results {
+    animation: fadeInUp 0.4s ease;
+}
+
+.video-link-item {
+    animation: slideInDown 0.3s ease;
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 4px var(--shadow) !important;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 12px var(--shadow) !important;
+}
+
+/* PWA-Specific Styles */
+
+/* iOS PWA Status Bar Support */
+@supports (padding-top: env(safe-area-inset-top)) {
+    body {
+        padding-top: calc(env(safe-area-inset-top) + 1rem);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+    }
+}
+
+/* Standalone mode detection */
+@media (display-mode: standalone) {
+    body {
+        background-color: var(--white);
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    
+    /* Enhance touch targets in standalone mode */
+    .btn, button, input, textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove text selection on UI elements */
+    .header-section, .feature-card, .instructions-card {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    
+    /* Allow text selection in input areas */
+    input, textarea, .video-link-url {
+        user-select: text;
+        -webkit-user-select: text;
+    }
+}
+
+/* PWA Install Button */
+#pwa-install-btn {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+    color: var(--white);
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+#pwa-install-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+/* iOS Install Banner */
+#ios-install-banner {
+    border-left: 4px solid var(--primary-blue);
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(76, 175, 80, 0.03));
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+    animation: slideInDown 0.5s ease;
+}
+
+#ios-install-banner .alert-heading {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+#ios-install-banner ol li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+#ios-install-banner ol li strong {
+    color: var(--primary-blue);
+}
+
+#generic-install-banner {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(76, 175, 80, 0.02));
+    animation: slideInDown 0.5s ease;
+}
+
+/* Offline Banner */
+#offline-banner {
+    background: linear-gradient(135deg, var(--loading-amber), var(--accent-orange));
+    color: var(--white);
+    border: none;
+    font-weight: 500;
+    animation: slideInDown 0.3s ease;
+}
+
+/* Touch-optimized interactions */
+@media (hover: none) and (pointer: coarse) {
+    /* Mobile/touch devices */
+    .btn:hover {
+        transform: none;
+    }
+    
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    .video-link-item:hover {
+        background-color: transparent;
+    }
+    
+    .video-link-item:active {
+        background-color: var(--background-grey);
+    }
+    
+    /* Increase touch targets */
+    .btn-group .btn {
+        padding: 0.75rem 1rem;
+    }
+    
+    .video-link-item {
+        padding: 1.25rem;
+    }
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 576px) {
+    body {
+        padding: 1rem 0;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .header-section {
+        margin-bottom: 2rem;
+    }
+    
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+    
+    .main-title {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    
+    /* Stack mode toggle buttons vertically on very small screens */
+    .mode-toggle .btn-group {
+        flex-direction: column;
+    }
+    
+    .mode-toggle .btn {
+        border-radius: 8px !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .mode-toggle .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Make input mode selection more touch-friendly */
+    .btn-group[role="group"] .btn-sm {
+        font-size: 0.85rem;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    /* Optimize extraction results for mobile */
+    .extraction-actions {
+        flex-direction: column;
+    }
+    
+    .extraction-actions .btn {
+        margin-bottom: 0.5rem;
+    }
+    
+    .extraction-actions .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Better mobile typography */
+    .feature-card h5 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+    
+    .instructions-list {
+        font-size: 0.95rem;
+    }
+}
+
+/* PWA Loading States */
+.pwa-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.pwa-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* PWA Status Indicators */
+.pwa-status {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--secondary-green);
+}
+
+.status-indicator.offline {
+    background-color: var(--accent-orange);
+    animation: pulse 1s infinite;
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-grey: #121212;
+        --white: #1e1e1e;
+        --text-dark: #ffffff;
+        --light-grey: #2d2d2d;
+        --border-grey: #404040;
+        --shadow: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.btn:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #0066cc;
+        --secondary-green: #006600;
+        --accent-orange: #cc3300;
+        --border-grey: #000000;
+    }
+}
